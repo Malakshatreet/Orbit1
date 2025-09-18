@@ -1,0 +1,79 @@
+﻿
+@model List<Category>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Services</h2>
+            <div><span>Check Our</span> <span class="description-title">Services</span></div>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="service-header">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-8 col-md-12">
+                        <div class="service-intro">
+                            <h6 class="service-heading">
+                                <div>Dynamic Events & Activities</div>
+                                <div><span>Development Opportunities</span></div>
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="service-summary">
+                            <h5>
+                                Community Growth & Volunteering
+                            </h5>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+                @foreach (var item in Model)
+                {
+                   
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card position-relative z-1">
+                            <div class="service-icon">
+                                <i class="bi @item.Icon"></i>
+                            </div>
+                            <a href="/Home/News/@item.Id" class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                            <h3>
+                                <a href="service-details.html">
+                                    Creative <span>@item.Name</span>
+                                </a>
+                            </h3>
+                            <p>
+                                @item.Description
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+
+        </div>
+
+    </section><!-- /Services Section -->
+
+
+
+
+
+
+
+
+ 
+</div>

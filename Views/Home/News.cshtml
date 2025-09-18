@@ -1,0 +1,36 @@
+﻿@model List<News>
+
+<section id="about" class="about section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Events News</h2>
+        <div><span>Stay updated! </span> <span class="description-title">Here’s all the news in one view</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-12 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
+
+                @foreach (var item in Model)
+                {
+                    <div class="about-image position-relative">
+                        <img src="@item.Image" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy" style="width: 400px; height: auto;>
+                    </div>
+
+                    <div class="about-content mb-5">
+                        <h2>@item.Title</h2>
+                        <h6><span>@item.Date</span></h6>
+                        <p class="lead">@item.Topic.</p>
+                    </div>
+                }
+
+                <a href="/Home/Messages" class="btn btn-primary mt-4">Customer experiences</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- /About Section -->

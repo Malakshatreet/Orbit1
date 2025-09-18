@@ -1,0 +1,77 @@
+﻿
+@model List<ContactUs>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <div><span>Here’s a user sharing</span> <span class="description-title"> their experience</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="testimonials-slider swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+                {
+                  "slidesPerView": 1,
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
+                  }
+                }
+            </script>
+
+            <div class="swiper-wrapper">
+
+               @foreach (var item in Model)
+                {
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h2>@item.Subject</h2>
+                                    <p>
+                                       @item.Message
+                                    </p>
+                                  
+                                  
+                                            <h3>@item.Name</h3>
+                                            <span>Client</span>
+                               </div>
+                            </div>
+                    </div>
+                                <div class="col-lg-4 d-none d-lg-block">
+                                    <div class="featured-img-wrapper">
+                                        <img src="assets/img/person/person-m-7.webp" class="featured-img" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    
+                
+                    <!-- End Testimonial Item -->
+                }
+
+         
+
+
+            </div>
+
+            <div class="swiper-navigation w-100 d-flex align-items-center justify-content-center">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- /Testimonials Section -->
